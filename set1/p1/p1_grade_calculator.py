@@ -61,10 +61,16 @@ def check_status(grades):
 
 
 # function 6: display the grade report
+# function 6: display the grade report
 def display_results(grades):
     print("\n===== STUDENT GRADE REPORT =====")
     print("Student:", STUDENT_NAME)
-    print("Average:", round(calculate_average(grades), 2))
+
+    print("\nGrades:")
+    for number, grade in enumerate(grades, start=1):
+        print(f"{number}. {grade}")
+
+    print("\nAverage:", round(calculate_average(grades), 2))
     print("Highest Grade:", get_highest_grade(grades))
     print("Lowest Grade:", get_lowest_grade(grades))
     print("Status:", check_status(grades))
