@@ -37,3 +37,25 @@ def get_grades():
 
             except ValueError:
                 print("Invalid input. Please enter a number.")
+
+# function 2: display the grade report
+def main():
+    grades = get_grades()
+
+    print("\n===== STUDENT GRADE REPORT =====")
+    print("Student:", STUDENT_NAME)
+    print("Generated:", datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
+
+    print("\nGrades:")
+    for number, grade in enumerate(grades, start=1):
+        print(f"{number}. {grade}")
+
+    print("\nAverage:", round(calculate_average(grades), 2))
+    print("Highest Grade:", get_highest_grade(grades))
+    print("Lowest Grade:", student_utils.get_lowest_grade(grades))
+    print("Status:", student_utils.get_pass_fail_status(grades))
+    print("================================")
+
+
+if __name__ == "__main__":
+    main()
