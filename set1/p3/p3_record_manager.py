@@ -57,3 +57,20 @@ def search_student():
 
     if not found:
         print("No matching student found.")
+
+
+# function 4: display all students
+def display_students():
+    if not students:
+        print("No students in the records.")
+        return
+
+    print("\n===== STUDENT RECORDS =====")
+
+    sorted_students = sorted(students, key=str.casefold)
+
+    for number, student in enumerate(sorted_students, start=1):
+        print(f"{number}. {student}")
+
+    print("Total students:", len(students))
+    print("===========================")
