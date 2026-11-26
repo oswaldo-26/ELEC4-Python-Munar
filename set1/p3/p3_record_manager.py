@@ -38,3 +38,22 @@ def remove_student():
             return
 
     print("Student not found.")
+
+
+# function 3: search for a student
+def search_student():
+    query = input("Enter all or part of a student name: ").strip().casefold()
+
+    if not query:
+        print("Search cannot be empty.")
+        return
+
+    found = False
+
+    for student in students:
+        if query in student.casefold():
+            print(student)
+            found = True
+
+    if not found:
+        print("No matching student found.")
