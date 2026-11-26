@@ -49,3 +49,40 @@ def open_file():
 
     finally:
         print("File operation finished.")
+
+
+# function 3: main menu
+def main():
+    while True:
+        print("\n===== SAFE MENU PROGRAM =====")
+        print("1. Divide two numbers")
+        print("2. Open a file")
+        print("3. Exit")
+
+        choice = input("Choose an option: ")
+
+        if choice == "1":
+            divide_numbers()
+
+        elif choice == "2":
+            open_file()
+
+        elif choice == "3":
+            print("Program exited.")
+            break
+
+        else:
+            print("Invalid choice. Please try again.")
+
+
+if __name__ == "__main__":
+    main()
+
+
+
+# the try block contains code that may cause an error.
+# the except block handles errors and prevents the program from crashing.
+# the else block runs only when no exception occurs in the try block.
+# the finally block always runs, whether an error occurs or not.
+# this program uses valueerror, zerodivisionerror, and filenotfounderror
+# to handle invalid numbers, division by zero, and missing files.
