@@ -26,3 +26,26 @@ def divide_numbers():
 
     finally:
         print("Division operation finished.")
+
+
+# function 2: open and read a file
+def open_file():
+    filename = input("Enter the file name: ")
+
+    try:
+        with open(filename, "r") as file:
+            contents = file.read()
+
+    except FileNotFoundError:
+        print("File not found.")
+
+    except PermissionError:
+        print("You do not have permission to open this file.")
+
+    else:
+        print("\n===== FILE CONTENTS =====")
+        print(contents)
+        print("=========================")
+
+    finally:
+        print("File operation finished.")
